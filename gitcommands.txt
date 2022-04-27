@@ -4,3 +4,7 @@ Git Terminal commands:
 1. git add filename
 2  git commit -m 'insert your log message'
 3. git push
+4. git checkout main
+5. git fetch (to check for changes)
+6. git pull
+7. git merge

@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 
 df = pd.read_csv('climate.csv')
+df = df.drop(columns="Date Time")
 
 def get_sequence(data, seq_len, target_name):
 
@@ -23,7 +24,17 @@ x, y = get_sequence(df, seq_len= 6, target_name='T (degC)')
 print(x.shape)
 print(y.shape)
 
+def get_features(x):
+    feature = []
+    for i in range(x.shape[0]):
+        mean_column_1 = np.mean(x[i][:, 0])
+        feature.append(mean_column_1)
+    return feature
 
+print(get_features(x))
+
+
+    
 
 
 
